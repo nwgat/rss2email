@@ -60,12 +60,12 @@ from several equivalent formats.
 1. A ``.zip`` file (suggested for Microsoft Windows users)::
 
     $ wget https://github.com/wking/rss2email/archive/v3.9.zip
-    $ unzip rss2email-*.zip
+    $ unzip v3.9.zip
 
 2. A ``.tar.gz`` file (suggested for everyone else)::
 
     $ wget https://github.com/wking/rss2email/archive/v3.9.tar.gz
-    $ tar xvf rss2email*.tar.gz
+    $ tar zxvf v3.9.tar.gz
 
 3. A Git_ checkout (suggested for developers)::
 
@@ -76,7 +76,9 @@ Install
 
 From the unpacked directory, run::
 
-  $ python setup.py install
+  $ pip3 install html2text feedparser (system wide)
+  $ pip3 install html2text feedparser --user (user only)
+  $ python3 setup.py install
 
 You can pass all the usual options to the ``install`` command,
 including ``--user``.  If you don't want to install rss2email, you can
@@ -212,7 +214,7 @@ __ `windows scheduler`_
 On Unix/Linux systems, you should add a cron_ job that runs ``r2e``.
 For example, run ``r2e`` every night (at 1:23 am) with::
 
-  23 1 * * * r2e run
+  0/60 * * * * r2e run
 
 Development
 ===========
